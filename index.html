@@ -47,6 +47,27 @@ body{
     radial-gradient(circle at 86% 8%, rgba(16,185,129,.38), transparent 46%),
     radial-gradient(circle at 8% 108%, rgba(52,211,153,.20), transparent 42%);
 }
+
+/* ---- LOGO colada no canto superior direito ---- */
+.hero-logo{
+  position:absolute;
+  top:18px;
+  right:22px;
+  z-index:4;
+  width:56px;height:56px;border-radius:14px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  padding:6px;object-fit:contain;
+  box-shadow:0 10px 26px -14px rgba(0,0,0,.55);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.hero-logo:hover{
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:0 14px 30px -14px rgba(16,185,129,.75);
+}
+
 .hero-inner{
   position:relative;z-index:2;max-width:1440px;margin:0 auto;
   display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap;
@@ -65,7 +86,7 @@ body{
 .hero p.sub{
   font-size:14.5px;color:#B8D6CB;max-width:640px;line-height:1.55;font-weight:400;
 }
-.hero-right{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.hero-right{display:flex;flex-direction:column;align-items:flex-end;gap:14px;padding-top:64px}
 .updated{
   display:inline-flex;align-items:center;gap:9px;
   font-size:12.5px;font-weight:500;color:#D7EFE6;
@@ -299,8 +320,9 @@ footer{
 }
 @media (max-width:760px){
   .hero{padding:26px 20px 84px}
+  .hero-logo{top:14px;right:16px;width:44px;height:44px;border-radius:11px;padding:5px}
   .hero-inner{flex-direction:column;align-items:flex-start}
-  .hero-right{align-items:flex-start;width:100%}
+  .hero-right{align-items:flex-start;width:100%;padding-top:0}
   .actions{justify-content:flex-start}
   main{padding:0 18px 48px}
   .kpis{margin-top:-58px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:11px}
@@ -330,6 +352,15 @@ footer{
 
 <!-- ================= HEADER ================= -->
 <header class="hero">
+  <img
+    src="https://play-lh.googleusercontent.com/nNX3uE1J5d2IA3aywlINCxcfc-y2uKxo5QcH4GFK1R4AJZj_4RhlG6OYL6_78pAY1lsAWZrblOuiENNj8WDgGw=w240-h480-rw"
+    srcset="https://play-lh.googleusercontent.com/nNX3uE1J5d2IA3aywlINCxcfc-y2uKxo5QcH4GFK1R4AJZj_4RhlG6OYL6_78pAY1lsAWZrblOuiENNj8WDgGw=w480-h960-rw 2x"
+    class="hero-logo"
+    alt="Imagem do ícone"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+    aria-hidden="true">
+
   <div class="hero-inner">
     <div class="hero-left">
       <div class="eyebrow"><span class="dot"></span> Painel de Monitoramento - COANS( GEPAS)</div>
